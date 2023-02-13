@@ -1,0 +1,2 @@
+run = "make clean test run"
+language = "C"
