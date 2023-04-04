@@ -1,10 +1,14 @@
 #include <stdio.h>
+#include <math.h>
 #include "libmath.h"
 
+// define "epsilon" to account for floating point representation errors
+#define EPSILON (0.00001f)
+
 #define ASSERT(actual, expected) { \
-	if (actual != expected) { \
-		printf("Assertion failed at %s:%d, expected %d, actual %d\n", \
-			__func__, __LINE__, expected, actual); \
+	if (fabs(actual - expected) > EPSILON) { \
+		printf("Assertion failed at %s:%d, expected %f, actual %f\n", \
+			__func__, __LINE__, (float) expected, (float) actual); \
 		return -1;\
 	} \
 	else {printf(".");} \
@@ -33,7 +37,7 @@ int test_div() {
 	ASSERT(divide(10, 10), 1)
 	ASSERT(divide(100, 10), 10)
 	ASSERT(divide(10, 5), 2)
-	ASSERT(divide(5, 2), 2)
+	ASSERT(divide(5, 2), 2.5)
 	ASSERT(divide(10000, -1), -10000)
 	ASSERT(divide(0, 1000), 0)
 	// Can't test this, "Floating point exception (core dumped)"

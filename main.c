@@ -7,11 +7,11 @@ int main(int argc, char** argv) {
     printf("Usage: %s <number> <operation> <number>\n", argv[0]);
     return 1;
   }
-  int n1 = atoi(argv[1]);
-  int n2 = atoi(argv[3]);
+  float n1 = atof(argv[1]);
+  float n2 = atof(argv[3]);
   char op = argv[2][0];
 
-  int (*func)(int, int) = 0;
+  float (*func)(float, float) = 0;
   switch (op) {
   case '*':
   case 'x': 
@@ -31,7 +31,7 @@ int main(int argc, char** argv) {
 	return -1;
   }
 	
-  int result = func(n1, n2);
-  printf("%d %s %d = %d\n", n1, argv[2], n2, result);
+  float result = func(n1, n2);
+  printf("%-8.4f %s %-8.4f = %-8.4f\n", n1, argv[2], n2, result);
   return 0;
 }

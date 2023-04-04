@@ -1,5 +1,5 @@
-extern int mult(int a, int b);
-extern int add(int a, int b);
-extern int sub(int a, int b);
-extern int divide(int a, int b);
-extern int sqr(int a);
+extern float mult(float a, float b);
+extern float add(float a, float b);
+extern float sub(float a, float b);
+extern float divide(float a, float b);
+extern float sqr(float a);

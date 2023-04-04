@@ -1,19 +1,19 @@
-int mult(int a, int b) {
+float mult(float a, float b) {
 	return a * b;
 }
 
-int add(int a, int b) {
+float add(float a, float b) {
 	return a+b;
 }
 
-int sub(int a, int b) {
+float sub(float a, float b) {
 	return a-b;
 }
 
-int divide(int a, int b) {
-	return (int) a/b;
+float divide(float a, float b) {
+	return a/b;
 }
 
-int sqr(int a) {
+float sqr(float a) {
 	return a * a;
 }
